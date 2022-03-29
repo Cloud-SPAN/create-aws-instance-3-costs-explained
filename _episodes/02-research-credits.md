@@ -18,9 +18,14 @@ keypoints:
 # Introduction
 AWS Cloud Credit for Research (AWSCR) is a programme aimed 
 
+FAQ We require applicants provide their official institution-issued email ID (.edu, .org, or equivalent) to expedite the verification and decision process. Applications from non-institution domains will not be accepted.
+FAQ Yes. Please set up an AWS account prior to applying for AWS Promotional Credit.
+The AWS Cloud Credit for Research Program follows the AWS Promotional Credit Terms and Conditions, this: https://aws.amazon.com/awscredits/
+
 
 AWS offers Research Credits
 
+https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/
 
 https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/
 
