@@ -3,7 +3,7 @@ title: "The AWS Free Tier"
 teaching: 20
 exercises: 10
 questions:
-- What covers the AWS Free Tier?
+- What does the AWS Free Tier cover?
 - How to know your service usage is within the Free-Tier limits?
 - How much will you pay should you exceed the Free-Tier limits?
 objectives:
@@ -23,11 +23,15 @@ keypoints:
 # Introduction
 The [AWS Free Tier](https://aws.amazon.com/free) covers more than 100 AWS services including the compute and storage services you used to create your instance in the previous lesson. Service usage covered by  the AWS Free Tier has limits, however, both in time and in capacity, and you will be billed as soon as you surpass these limits. 
 
-The AWS Free Tier has three schemes (offers/plans): (1) *12 months free*, (2) *Free Trials*, (3) and *Always free*. The *12 months free* scheme lasts for 12 months from the moment you opened your account and covers typical IT services such as servers, storage and networking. This scheme covers the instance you created in the last lesson but only if you created it using the t2.micro instance type we suggested; if so, you will not be billed for one year.
+The AWS Free Tier has three schemes (offers/plans): 
+1. *12 months free*,
+    Lasts for 12 months from the moment you opened your account and covers typical IT services such as servers, storage and networking. This scheme covers the instance you created in the last lesson but only if you created it using the t2.micro instance type we suggested; if so, you will not be billed for one year.
 
-The *Free Trials* scheme covers somewhat more specialised services such as machine learning. It is valid either for short-term periods of 1-3 months of for a number of service invocations. Free Trials start from the date you activate (start using) a particular service and will terminate after the specified time period expires or the number of service invocations is reached; you will then be billed for any usage of the service. 
+2. *Free Trials* 
+    Covers more specialised services such as machine learning. It is valid either for short-term periods of 1-3 months of for a number of service invocations. Free Trials start from the date you start using a particular service and will terminate after the specified time period expires or the number of service invocations is reached. After that you will then be billed. 
 
-The *Always Free* scheme covers a variety of services some of which have an auxiliary role. For example, you will recall that in using your instance you must use an encrypted key file to login to your instance and, through the program `ssh`, you enter shell commands and get data/results that are transferred between your local computer and your instance. In so doing, you are using two *always-free* services: the *AWS Key Management Service* to securely access your instance and the *AWS Data Transfer* service to tranfer data into and out from your instance. These services have always-free monthly quotas of 20,000 requests and 100 GB respectively. If you surpass those quotas in a month, you will be billed. 
+3. *Always free*
+   Covers a variety of services some of which have an auxiliary role. For example, you will recall that in using your instance you must use an encrypted key file to login to your instance and, through the program `ssh`, you enter shell commands and get data/results that are transferred between your local computer and your instance. In so doing, you are using two *always-free* services: the *AWS Key Management Service* to securely access your instance and the *AWS Data Transfer* service to tranfer data into and out from your instance. These services have always-free monthly quotas of 20,000 requests and 100 GB respectively. If you surpass those quotas in a month, you will be billed. 
 
 In the remainder of this episode we will only cover the Free-Tier aspects that apply to the instance your created in the last lesson:
 
@@ -54,33 +58,32 @@ The instance you created in the previous lesson uses these Free-Tier services:
 
 This section covers EC2 and EBS. KMS and DT are covered in the next section.
 
-To find out about the EC2 and EBS services and their free quotas, go to the [AWS Free Tier](https://aws.amazon.com/free) web page and scroll down with the mouse until you see the heading **Free Tier Details** on the left --- see the page below (no need to login to your account yet). 
+To find out about the EC2 and EBS services and their free quotas, go to the [AWS Free Tier](https://aws.amazon.com/free) web page and scroll down with the mouse until you see the heading **Free Tier Details** on the left below (no need to login to your account yet). 
 
 ### The compute service of your instance: EC2
 
-To see the details of the EC2 Free Tier that apply to your instance, in the page below we have checked the Tier Type filter **12 Months Free** (on the left) and hovered the mouse cursor over the box labelled **Amazon EC2 750 Hours** so that all the information details in the box are uncovered --- we added the two red lines for convenience. 
+Check the **12 Months Free** box under the Tier Type filter. These shows the EC2 Free Tier detail that apply to your instance. Hovering the mouse over the boxes reveals more detail for each category of use (Compute, Storage, Database etc). Under Compute, you can have (1) you have 750 hours **per month**, which amounts to 750/31 = 24.19 hours for each day in a month; (2) you can use those hours running **Linux**, **RHLS** (Red Hat Enterprise Linux), and **SLES** (Suse Linux Enterprise Server) with instances of type **t2.micro** or **t3.micro** whichever is available in the region you create the instance, and (3) you can have other 750 hours per month to run Windows with instances of type **t2.micro** or **t3.micro** whichever is available in the region you create the instance.
 
-![Caption.](../fig/02-ec2-free-tier.png "EC2 compute Free Tier details.")
+![Caption.](../fig/02-ec2-free-tier.png "EC2 compute Free Tier details for each category of use. The Compute category is highlighted so the full detials are shown.")
 
-You can read in that box that: (1) you have 750 hours **per month**, which amounts to 750/31 = 24.19 hours for each day in a month; (2) you can use those hours running **Linux**, **RHLS** (Red Hat Enterprise Linux), and **SLES** (Suse Linux Enterprise Server) with instances of type **t2.micro** or **t3.micro** whichever is available in the region you create the instance, and (3) you can have other 750 hours per month to run Windows with instances of type **t2.micro** or **t3.micro** whichever is available in the region you create the instance.
 
-Clearly, the point (1) above means that you can run your t2.micro instance continuously until your Free Tier expires without incurring any cost, but see notes below. 
+This means that you can run your t2.micro instance continuously until your Free Tier expires without incurring any cost, but see notes below. 
 
 > ## Remember this:
 > - The 750 hours for Linux instances cannot be combined with the 750 hours for Windows intances.  
-> - The 750 hours for Linux and Windows instances apply globally to your account, not to a region and not to an instance. That is, the 750 hours in a month are divided among the number of Linux (or Windows) t2.micro instances that you run in the month in any region. If you run two or more t2.micro instances continuously for one month or longer, you will incur some cost.  
+> - The 750 hours for Linux and Windows instances apply globally to your account, not to a region and not to an instance. That is, the 750 hours in a month are divided among the number of Linux (or Windows) t2.micro instances that you run in the month in any region. You can run one instance continually for 750 hours or two for 375 hours or three for 250 hours etc.
 > - Unused hours in a month do not roll over to the next month.
 {: .callout}
 
 ### The storage service of your instance: EBS
+Note that there are several different types of Storage.
+To see the details of the EBS Free Tier that apply to your instance, scroll further down the AWS Free Tier web page until you see the Storage box labelled **Amazon Elastic Block Storage 30GB** and then hover the mouse cursor on the box.
 
-To see the details of the EBS Free Tier that apply to your instance, scroll further down the AWS Free Tier web page until you see the box labelled **Amazon Elastic Block Storage 30GB** and then hover the mouse cursor on the box  shown below:
+For Amazon Elastic Block Storage 30GB Storage (1) you can use up to 30GB of EBS storage for 12 months; (2) the EBS storage can be **SSD** (Solid State Drive) storage or magnetic (previous generation) storage with up 2 million Input/Ouput (I/O) operations; and (3) you have up to 1GB of snapshot storage. 
 
-![Caption.](../fig/03-ebs-free-tier.png "EBS storage Free Tier details.")
+![Caption.](../fig/03-ebs-free-tier.png "EC2 compute Free Tier details for each category of use. The Amazon Elastic Block Storage 30GB category is highlighted so the full detials are shown.")
 
-You can read in that box that: (1) you can use up to 30GB of EBS storage for 12 months; (2) EBS storage can be **SSD** (Solid State Drive) storage or magnetic (previous generation) storage with up 2 million Input/Ouput (I/O) operations; and (3) you have up to 1GB of snapshot storage. 
-
-The instance you created in the last lesson is using 30 GB of SSD storage. 
+The instance you created in the last lesson is using all 30 GB of SSD storage. 
 
 Snapshots are used for backups but your instance does not perform any backups.
 
@@ -88,15 +91,16 @@ Snapshots are used for backups but your instance does not perform any backups.
 > - The Free Tier 30 GBs EBS storage applies to your account. As your instance is using that many GBs, you cannot use more storage of any type (SSD or magnetic) without incurring some cost. Of those 30 GBs, 12 GBs are free for your data and applications.
 {: .callout}
 
-# 2. Checking your service usage as compared to Free Tier quotas
+# 2. Checking your service usage is within Free Tier quotas
 
-AWS bills users monthly and Free-Tier eligible services have monthly quotas or limits. You must not surpass these quotas in each month if you don't want to incur costs while your Free Tier is active. To find out how much in the current month you have used of your monthly Free-Tier allowance, login to your IAM account and go to the **Billing Dashboard** using the drop-down menu *user@accountalias* (or *user@accountnumber* if you did not create an alias) on the top right. Then, on the navigation pane on the left, under Billing, click on **Free Tier**. A page similar to the one below will apppear.
+AWS bills users monthly and Free-Tier eligible services have monthly quotas or limits. You must not surpass these quotas in each month if you don't want to incur costs while your Free Tier is active. To find out how much in the current month you have used of your monthly Free-Tier allowance, login to your IAM account and go to the **Billing Dashboard** using the drop-down menu *user@accountalias* (or *user@accountnumber* if you did not create an alias) on the top right. Then, on the navigation pane on the left, under Billing, click on **Free Tier**. 
+This shows you the Free Tier usage summary table.
 
 ![Caption.](../fig/05-free-tier-usage-excedeed01Table.png "Free Tier usage summary table.")
 
-The table shows the usage in the current month of each Free-Tier eligible service in your account. For each service, a row in the table shows (from left to right) the type of **Service**, the **AWS Free Tier usage limit**, the service **Current usage** in the month, the service **Forecasted usage** for the month, the service (Month-To-Date) **MTD actual usage** in the month as a percentage of the service monthly Free-Tier limit, and the service **MTD Forecasted usage** for the month. 
+The table shows the usage in the current month of each Free-Tier eligible service in your account. For each service, a row in the table shows the type of **Service**, the **AWS Free Tier usage limit**, your **Current usage** in the month, the  **Forecasted usage** for the month, the  **MTD actual usage** in the month as a percentage of the service monthly Free-Tier limit, and the service **MTD Forecasted usage** for the month. 
 
-**MTD** stands for the period of time between the 1st of the current month and the last finalized day before the current date.
+**MTD** stands for Month-To-Date the period of time between the 1st of the current month and the last finalized day before the current date.
 
 Any service created or used in a month will contribute to the corresponding service usage of the month even if the service is deleted early in the month.
 
