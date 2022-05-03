@@ -202,7 +202,7 @@ Under "Details - AWS Service Charges", the services being used by our account ar
 
 ![Caption.](../fig/06-aws-bill-page01.png "AWS Bills - Example 1.")
 
-In the figure below we have expanded the drop-down menu of the **Elastic Compute Cloud** (EC2) service. Service usage and cost is grouped by region. Our account shows only the Ireland region for EC2 as we are using EC2 only in that region (below is an example showing multiple regions).
+we have expanded the drop-down menu of the **Elastic Compute Cloud** (EC2) service. Service usage and cost is grouped by region. Our account shows only the Ireland region for EC2 as we are using EC2 only in that region (below is an example showing multiple regions).
 
 Note that we have used 93.542 hours of the EC2 service and 13.549 GB-Month's of the EBS storage service, yet the incurred cost for each service is $0.00 because what we have used of each service so far within the month is within the monthly Free-Tier quota of each service. 
 
