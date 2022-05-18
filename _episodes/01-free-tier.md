@@ -176,19 +176,20 @@ Note that the Current Usage values are rounded for display but the exact values 
 **MTD forecasted usage**  let's you know whether your current rate of use excceds that allowed under the free-tier.
 
 > ## Remember this:
-> If an **MTD forecasted usage** value in the AWS Free-Tier Summary table is higher than 100%, you should do reduce your use of it. 
+> If an **MTD forecasted usage** value in the AWS Free-Tier Summary table is higher than 100%, you should reduce your use of it. 
 >
-> If you have not changed the configuration of your instance it you should not exceed the free-tier limit and the instance will not incur a cost even if you don't stop or delete it. However, if you change its configuration by:
+> If you have not changed the configuration of your instance, you should not exceed the free-tier limit and the instance will not incur a cost even if you don't stop or delete it. However, if you change its configuration by:
 > - adding EBS storage or 
 > - using an instance type with more capacity
-> The you _could_ exceed the limit if you do not make adjustments.
+> 
+> Then you _could_ exceed the limit if you do not make adjustments.
 > For example, if you double the EBS storage you will need to delete your instance half way through the month to stay within the limit. 
 > Note: This course does not cover how to increase the EBS storage of your instance.
 {: .callout}
 
 # 3. Understanding your bills
 You will be billed on the 3rd of 4th of each month but can access your bill any time in the Billing Dashboard. 
--  Login to your IAM account and go to the Billing Dashboard using the drop-down menu **user@accountalias**(or **user@accountnumber** if you did not create an alias) on the top right. 
+-  Login to your IAM account and go to the Billing Dashboard using the drop-down menu **user@accountalias** (or **user@accountnumber** if you did not create an alias) on the top right. 
 -  Click **Bills** under Billing on the left
 
 This will show a summary of the current month's bill. A drop-down menu, **Date** enables you access previous bills. 
