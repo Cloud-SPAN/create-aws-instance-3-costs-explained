@@ -14,7 +14,9 @@ keypoints:
 - The AWS Free Tier is available to any business or personal AWS account. 
 - It has three schemes, *12 months free*, *Free Trials*, and *Always Free*, that apply to different types of service.
 - Your instance uses *12 months free* services, EC2 compute and EBS storage services, and *Always Free* services, KMS login key management and Data Transfer services. 
-- You can easily check your service usage as compared to the Free-Tier limits in the Billing Dashboard option **Free Tier** and your bills in the option **Bills**. Check the first one every few days.
+- If you do not make changes to the configuration of the instance it will remain free
+- If you increase the size of your instance or the number of instances and want the service to remain free, you will be need to make other adjustsments such as deleting instances before the end of the month.
+- You can check your service usage as compared to the Free-Tier limits in the Billing Dashboard option **Free Tier** and your bills in the option **Bills**. Check the first one every few days.
 ---
 > ## Prerequisites
 > You will need to login to your AWS IAM user account to follow the second part of this episode; the instructions to login are in the lesson [Create and manage your AWS instance](https://cloud-span.github.io/create-aws-instance-2-manage-instance/01-create-aws-instance/).
@@ -184,32 +186,15 @@ Note that the Current Usage values are rounded for display but the exact values 
 > For example, if you double the EBS storage you will need to delete your instance half way through the month to stay within the limit. 
 > Note: This course does not cover how to increase the EBS storage of your instance.
 >
-
 {: .callout}
 
 # 3. Understanding your bills
-AWS bills users every month and the bill of the previous month is available on the 3rd or 4th of the current month. You can access your AWS bills any time in the Billing Dashboard as follows. Login to your IAM account and go to the Billing Dashboard using the drop-down menu **user@accountalias**(or **user@accountnumber** if you did not create an alias) on the top right. Then, on the navigation pane on the left, under Billing, click on **Bills**. A page similar to the one below will apppear.
+You will be billed on the 3rd of 4th of each month but can access your bill any time in the Billing Dashboard. 
+-  Login to your IAM account and go to the Billing Dashboard using the drop-down menu **user@accountalias**(or **user@accountnumber** if you did not create an alias) on the top right. 
+-  Click **Bills** under Billing on the left
 
-The page shows a summary of the current month bill (April 2022). At the top, under Bills, the **Date** drop-down menu enables you access previous bills. 
-
-Under "Details - AWS Service Charges", the services being used by our account are shown as drop-down menus and with a cost of $0.00 to the right. Clicking on the drop-down menu of a service will show you the details of usage and cost for the service. 
+This will show a summary of the current month's bill. A drop-down menu, **Date** enables you access previous bills. 
 
 ![Caption.](../fig/06-aws-bill-page01.png "AWS Bills - Example 1.")
 
-we have expanded the drop-down menu of the **Elastic Compute Cloud** (EC2) service. Service usage and cost is grouped by region. Our account shows only the Ireland region for EC2 as we are using EC2 only in that region (below is an example showing multiple regions).
-
-Note that we have used 93.542 hours of the EC2 service and 13.549 GB-Month's of the EBS storage service, yet the incurred cost for each service is $0.00 because what we have used of each service so far within the month is within the monthly Free-Tier quota of each service. 
-
-Had our Free Tier expired, the costs shown in the table would be: 93.542 hours *times* $0.0126 USD per hour of t2.micro instance = **$1.178** for the EC2 service so far in the month, and 13.549 GB-Months *times* $0.11 USD per GB-Month = **$1.49** for EBS service likewise. 
-
-![Caption.](../fig/06-aws-bill-page02EC2-EBS.png "AWS Bills - Example 2.")
-
-The figure below shows a billing example for EC2 service usage involving two regions and two  (Free-Tier eligible) t2.micro instances and the Free Tier being active but exceeded. Recall that each account has Free-Tier 750 hours per month of t2.micro instance service. 
-
-Instance 1 in the Northen Virginia region ran for 746 hours in the month with no cost, and leaving 750 - 746 = 4 Free-Tier hours still to be used. Instance 2 in the Oregon region ran for 534 hours. Of these hours, 4 incurred no cost as the 4 Free-Tier hours still to be used were applied. Thus only 530 hours were actually billed for a cost of 530 hours *times* $0.0125 USD per hour of t2.micro instance = $6.36.
-
-![Caption.](../fig/07-aws-bill-exceeding-free-tier2.png "AWS Bills - Example 3.")
-
-
- 
-
+If you stay within the free-tier limit, the Service charges will remain at $0.
