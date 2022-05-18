@@ -117,14 +117,14 @@ Under the free tier you have 30 GB-Months per month for 12 months. This means yo
 
 > ## Example
 > If you had two 30 GB instances running you can use them for
-> 30 / (2 x 30) * 28 days = 14 days in February
-> 30 / (2 x 30) * 30 days = 15 days in April
-> 30 / (2 x 30) * 31 days = 15.5 days in March
+> -  30 / (2 x 30) * 28 days = 14 days in February
+> -  30 / (2 x 30) * 30 days = 15 days in April
+> -  30 / (2 x 30) * 31 days = 15.5 days in March
 > 
 > If you had a 50 GB instance running you can use it for
-> 30 / 50 * 28 days = 16.8 days in February
-> 30 / 50 * 30 days = 18 days in April
-> 30 / 50 * 31 days = 18.6 days in March
+> -  30 / 50 * 28 days = 16.8 days in February
+> -  30 / 50 * 30 days = 18 days in April
+> -  30 / 50 * 31 days = 18.6 days in March
 {: .callout}
 
 Note that AWS uses actually seconds for calculations but we use hours here to simplify. See [EBS pricing](https://aws.amazon.com/ebs/pricing/).
@@ -141,9 +141,9 @@ Let's see a billing example assuming your 12-month Free Tier has expired.
 > This means you pay $ 0.11 per GB per month.
 > 
 > If you create a 30 GB instance and delete it after 8 days you will pay:
-> 0.11 * 30 GB * 8/28 = $0.9428
-> 0.11 * 30 GB * 8/30 = $0.88
-> 0.11 * 30 GB * 8/31 = $0.8516
+> -  0.11 * 30 GB * 8/28 = $0.9428 in February
+> -  0.11 * 30 GB * 8/30 = $0.88 in April
+> -  0.11 * 30 GB * 8/31 = $0.8516 in March
 {: .callout}
 
 
@@ -153,44 +153,38 @@ Let's see a billing example assuming your 12-month Free Tier has expired.
 
 *service Current usage / service Free-Tier quota * 100*
 
-Let's compute MTD actual usage for the first three services in the table (shown below):
-![Caption.](../fig/05-free-tier-usage-excedeed03EBSnEC2rows.png "EC2 storage Free Tier usage table row.")
+![Caption.](../fig/05-free-tier-usage-excedeed03EBSnEC2rows.png "Free-Tier usage table showing the rows for EBS, EC2 and KMS. The column give the Freer-tier limit, the current usage, for forecasted use for the month, the MTD usage and the forecasted MTD usage for the month")
 
-> ## MTD actual usage calculations:
+> ## Example MTD usage calculations:
 > *service Current usage / service Free-Tier quota * 100*
 > 
-> MTD actual usage EBS =  8 GB-Mo / 30 GB * 100  =  26.6%
+> The Free-Tier quota of Elastic Block Storage (EBS) is 30 GB per month. If your usage of EBS so far this month is 8 GB-Mo then you have used:
+>           8 GB-Mo / 30 GB * 100  =  26.6%
 >
-> MTD actual usage EC2 =  76 hours / 750 hours * 100 = 10.13%
+> The Free-Tier quota of EC2 is 750 hours per month. If your usage of EC2 so far this month is 76 hours then you have used:
+>          76 hours / 750 hours * 100 = 10.13%
 >
-> MTD actual usage KMS =  13 requests / 20,000 requests * 100 = 0.065%
+> The Free-Tier quota of Key Management Service (KMS) is 20,000 requests per month. If your usage of KMS so far this month is 13 requests then you have used:
+>           13 requests / 20,000 requests * 100 = 0.065%
+>  
 {: .callout}
 
-Values of *Current usage* in the table are rounded up or down but *MTD actual usage* values in the table were computed with the non-rounded-up/down values, and hence the slight difference between the *MTD actual usage* values in the table and the values in our example.
+Note that the Current Usage values are rounded for display but the exact values are used in calculation so you may see small differences between the table and your own calculations.
 
-**MTD forecasted usage**  is, for each service, the service *Forecasted usage* as a percentage of the service Free-Tier quota, namely:
-
-*service Forecasted usage / service Free-Tier quota * 100*
-> ## MTD forecasted usage calculations:
-> MTD forecasted usage EBS =  32 GB-Mo / 30 GB * 100  =  106.66%
->
-> MTD forecasted usage EC2 =  325 hours / 750 hours * 100 = 43.33%
->
-> MTD forecasted usage KMS =  56 requests / 20,000 requests * 100 = 0.27%
-{: .callout}
-
-While forecasted usage values in the AWS Free-Tier Summary table (columns 4th and 6th) are only forecasts, you should not ignore them: 
+**MTD forecasted usage**  let's you know whether your current rate of use excceds that allowed under the free-tier.
 
 > ## **Remember this**:
-> If an **MTD forecasted usage** value in the AWS Free-Tier Summary table has gone **red**, you should do something such as deleting the relevant service or stop using it if you don't want to incur any cost. 
+> If an **MTD forecasted usage** value in the AWS Free-Tier Summary table is higher than 100%, you should do reduce your use of it. 
 >
-> As your instance is created, with the configuration suggested in the previous lesson, it  will not incur any cost even if you don't stop or delete it. You may, however, change its configuration with:
-> - more EBS storage or 
-> - with an instance type with more capacity
+> If you have not changed the configuration of your instance it you should not exceed the free-tier limit and the instance will not incur a cost even if you don't stop or delete it. However, if you change its configuration by:
+> - adding EBS storage or 
+> - using an instance type with more capacity
+> The you _could_ exceed the limit if you do not make adjustments.
+
+> For example, if you double the EBS storage you will need to delete your instance half way through the month to stay within the limit. 
+> Note: This course does not cover how to increase the EBS storage of your instance.
 >
-> If you add more EBS storage for less than a month, as discussed above, you will need to delete your instance (and hence its EBS storage) for you not to incur any cost. This course does not cover how to increase the EBS storage of your instance but you may find out how to do it in the Internet 
->
-> If you use an instance with more capacity for less than a month, you must stop it for some time once you don't need the higher capacity in order not to incur any cost. The calculations to know how much more capacity and for how long you can use without incurring any cost are similar to those shown above for EBS storage.
+
 {: .callout}
 
 # 3. Understanding your bills
