@@ -51,13 +51,13 @@ That train a broader community on the use of cloud for research workloads.
 ACRC "does **not** support administrative workloads, operational projects, or ongoing projects".
 
 ### Eligibility
-ACRC is open to full-time faculty, full-time researchers, and students at an accredited research institution. Graduate, post-graduate and PhD students are eligible. ACCR is intented for relatively long (up to one year), research-oriented projects that "fall outside of course requirements". Student awards can be up to a maximum of US $5,000.00 --- faculty and researcher awards have no limit.
+ACRC is open to full-time faculty, full-time researchers, and students at an accredited research institution. Graduate, post-graduate and PhD students are eligible. ACCR is intented for relatively long (up to one year), research-oriented projects. Student awards can be up to a maximum of US $5,000.00 --- faculty and researcher awards have no limit.
 
-(Undergraduate students who wish to use AWS in courses or coursework can apply to the [AWS Educate](https://aws.amazon.com/education/awseducate/) programme which is free.)
+If you want to learn cloud skills rather than conduct research, the [AWS Educate](https://aws.amazon.com/education/awseducate/) is a free programme available to everyone.
 
 ### Awards and scope
 
-While student awards can be up to a maximum of US $5,000.00, the awarded amount will depend on your research proposal and the AWS service usage requirements as documented in your application. You must also specify in your application what AWS services you will use and for how long --- more on this below.
+The awarded amount will depend on the research proposal and AWS service  requirements in your application. An award is referred to as **AWS Promotional Credit** or **Promotional Credit**.  The Promotional Credit you receive may be **less** than you applied for. 
 
 Once you receive an award, it is referred to as **AWS Promotional Credit** or **Promotional Credit**.  The Promotional Credit you receive may be **less** than what you asked in your application. This may be because AWS is "encouraging a different cost model leveraging *spot instances* or providing funding for a smaller, initial proof of concept portion of a new project".
 
@@ -71,34 +71,34 @@ Please see other restrictions and guidelines in the [AWS Promotional Credit Term
 
 ### The application process at a glance
 
-Once you submit your application, you will receive an automated email confirming your submission from **aws-research-credit@amazon.com** --- check your spam folders. You will also receive an email from that email address with **the outcome of your application** within 30 days of submission but it may take up to 120 days. If your application is **not** successful, you can apply again but you **must revise** your application and not simply resubmitting the unsuccessful one --- see the next topic "2. Preparing your application to ACRC" where some of the evaluation criteria are presented. 
+You will be informed of the **the outcome of your application** in an email from **aws-research-credit@amazon.com** (check your spam folders) within 120 days but often much sooner. 
 
-If your application is successful, you will receive Promotional Credit directly applied to your AWS account, usually within 10 business days of the communication, or an email with a *Promotion Code* to redeem in your account. To redeem your Promotion code, go to the **Billing Dashbord**, select **Credits** on the left navigation pane, and then click on **Redeem credit** which will appear at the top right. The screen below will appear.  Enter your Promotion Code and the displayed characters to the security check bock and click on **Redeem Credit** again:  
+If your application is successful, you will receive Promotional Credit directly applied to your AWS account or an email with a *Promotion Code* to redeem in your account on the **Billing Dashbord**. 
+
+If your application is **not** successful, you can submit **revised** application
 
 ![Caption.](../fig/aws-credit4research/01-accr-redeeming-credit.png "Redeeming AWS Promotion Code."){: width="900px"}
 
 ### Other points you should know
 
 **Acknowledgements**:\
-You should acknowledge your ACCR award as "AWS Cloud Credit for Research" in any outcome of your project such as "websites, data sets, repeatable solutions, and publications". 
+You should acknowledge your ACCR award as "AWS Cloud Credit for Research" in any outcome of your project.
 
 **How long is Promotional Credit valid?**:\
-Promotional Credit expires after one year from the time it is applied to your account or until it is used entirely. Any promotional credit not used after the expiration date is forfeited. Once any of these conditions happen, **your credit card will be charged** for any AWS services you use. Check your credit regularly. "**Refunds will not be issued** for services billed after credit expires or is exhausted". You can also set Billing Alerts through the Billing Dashboard, following the options **Billing Preferences** and then **Manage Billing Alerts**. We don't cover this yet in this course unfortunately. 
+Promotional Credit expires after one year from the time it is applied to your account or until it is used entirely. Any promotional credit not used after the expiration date is forfeited. Once any of these conditions happen, **your credit card will be charged** for any AWS services you use. Check your credit regularly or set Billing Alerts through the Billing Dashboard.
 
 **You can submit another application for the same project**:\
 If your project runs for longer than planned, you can apply for another ACCR award explaining your project progress and including any outcomes and milestones you have reached.
 
 # 2. Preparing your application to ACCR
 
-To apply for an ACCR award, you will fill and submit the online application form here: [ACRC Application Details](https://pages.awscloud.com/aws-cloud-credit-for-research.html). However, you need to prepare the following beforehand:
+To apply for an ACCR award, you will fill and submit the online application form here: [ACRC Application Details](https://pages.awscloud.com/aws-cloud-credit-for-research.html). You will need:
 
-- opening your AWS account, as you will need to enter your 12-digit account number 
-- write your research project, see guidelines below
-- ask somebody to be your Faculty Advisor, as you will need to enter her/his name
-
-You will also need:
-- your institution email address
-- your phone number
+- An AWS account --- you will need to enter your 12-digit account number 
+- a research project description --- guidelines below
+- a Faculty Advisor --- you will need to give their name
+- an institution email address
+- a phone number
 
 ### Writing your research project
 
@@ -126,62 +126,61 @@ By all means, see if it is at all possible for your Faculty Advisor to revise yo
 
 ### Filling the application form
 
-All fields in the ACCR application form are **required** and the filling of most of them is straightforward (single line fields for Name, Account number, etc., and a few date fields and a few drop-down menus).
+All fields in the ACCR application form are **required** and the filling of most of them is straightforward.
 
-However, the following two fields require some preparing:
+However, the following two fields require preparation:
 - *Save and Share URL from AWS Pricing Calculator*
 - *Project Description*
 
 ![Caption.](../fig/aws-credit4research/02-accr-application-form-cost-url-project-description.png "Filling ACCR form --- Estimated Cost and Project Description."){: width="900px"}
 
-The field *Save and Share URL from AWS Pricing Calculator*, as shown by the red label in the figure, requires that you enter the URL (web address) of the cost estimate of your project which you need to prepare with the [AWS Pricing Calculator](https://calculator.aws/#/). You will see how to do your cost estimate and get its web address in the next topic "3. Getting the cost estimate of your project".
+The field *Save and Share URL from AWS Pricing Calculator* requires that you enter the URL of the cost estimate of your project. You need to prepare it with the [AWS Pricing Calculator](https://calculator.aws/#/) --- civered in the next topic "3. Getting the cost estimate of your project".
 
-The field *Project Description* in the figure looks small and will remain so even after you enter the  description of your project, making it difficult for you to see and edit your project. Hence, it is better that you prepare your project with a **plain text** editor, saving  regularly to a file. Once you finish editing your project, copy-paste it into that field. Windows users **should not use Word** as you may end up copying control characters. Use **notepad** instead. Once you copy-paste your project, a vertical scrolling bar will appear to the right of the field Project Description. Scroll to the top and to the bottom to check that the beginning and the end of your project are there.
+We recommend preparing the *Project Description* in a plain text editor (**not** Word) before pasting it into the box. 
 
 # 3. Getting the cost estimate of your project
 
-To get the cost estimate of the AWS services you will use in your project, you should first make a list of those services and then get an idea, an estimate, of how much "capacity" you need of each service. Then, using the AWS Pricing Calculator, you will select each service, configure it such that its configuration is or will yield the capacity you need, and then select and configure the next service, etc. This selection and configuration of your services will have an associated cost which will be the cost estimate you need to add to your ACCR application. 
+To get the cost estimate you will need a list of services and the estimated "capacity" of each", that you need. You enter these in the AWS Pricing Calculator. Your estimate of the *capacity* (not cost) of each service and the configuration you choose for the service do not have to be precise. 
 
-Your estimate of the *capacity* (not cost) of each service and the configuration you choose for the service do not have to be precise; in fact, sometimes it is only possible to choose a good approximation. 
+### Cost estimate example
 
-### Context of cost estimate example
-
-Let's suppose the following: **(1)** You created your instance as suggested in the lesson [Create and Manage your AWS instance](https://cloud-span.github.io/create-aws-instance-2-manage-instance/) so that it is Free-Tier eligible, that is: you created an instance of type *t2.micro* (with 1 processor and 1 GB memory) and 30 GB Elastic Block Storage (EBS). **(2)** You have used your instance for a few weeks and found that some of your programs run too slow (take too long to finish), and you would like to process a few large data sets that you need to transfer into your instance storage. **(3)** Hence you have decided to ask ACCR Promotional Credit to upgrade your instance to be of type *t2.medium* (2 processors and 4 GB memory) and 120 GB storage.  
+Let's suppose the following: 
+1. You created your instance as suggested in the lesson [Create and Manage your AWS instance](https://cloud-span.github.io/create-aws-instance-2-manage-instance/) so that it is Free-Tier eligible, that is: you created an instance of type *t2.micro* (with 1 processor and 1 GB memory) and 30 GB Elastic Block Storage (EBS). 
+2. You have used your instance for a few weeks and found that some of your programs take too long to finish and you would like to process a larger data set that you need to transfer into your instance storage
+3. You want to apply for ACCR Promotional Credit to upgrade your instance to be of type *t2.medium* (2 processors and 4 GB memory) and 120 GB storage.  
 
 Thus, we are going to get a cost estimate for an EC2 instance t2.medium and 120 GB EBS storage. 
 
-We will not include other services in the cost estimate.  You may recall that, when you use your instance, you also use the *Key Management Service* (KMS) and the *Data Transer* (DT) service, both of which are *always-free* services with 20,000 free requests per month  and 100 free GB per month respectively. Thus we are assuming those always-free monthly quotas will be enough for your project. 
-
-If you think your project will need either more than those always-free monthly quotas or any other service, you only need to include them in your cost estimate as described below.
+You may recall that, when you use your instance, you also use the *Key Management Service* (KMS) and the *Data Transer* (DT) service, both of which are *always-free* services with 20,000 free requests per month  and 100 free GB per month respectively. In this example, we assume those always-free monthly quotas will be enough for your project but if you think you nee more, you can include them in your cost estimate as described below.
 
 ### Getting the cost estimate and its URL
 
-To get the cost estimate, please go to the page of the [AWS Pricing Calculator](https://calculator.aws/#/) --- you do **not** need to login to your account to access the pricing calculator.
+Go to the page of the [AWS Pricing Calculator](https://calculator.aws/#/) --- you do **not** need to login to your account to access the pricing calculator.
 
-Once the AWS Pricing Calculator page appears, click on **Create estimate**. The page "Select service" below will appear. 
+Once the AWS Pricing Calculator page appears, click on **Create estimate** and the "Select service" page will appear. 
 
-Note that we have typed **ec2** in the search box (in blue) and this caused the displaying of the services whose name contain EC2. The service we are interested in is the first one: "Amazon EC2".
+Type **ec2** in the search box to display only the services whose name contain EC2. The service we are interested in is the first one: "Amazon EC2". In the "Amazon EC2" box, click **Configure**.
 
-In the box "Amazon EC2", at the bottom on the right, click on **Configure** and continue below.
+![Caption.](../fig/aws-credit4research/03-accr-pricing-calculator-ec2.png "AWS Pricing Calculator showing the 'Select service' page with 'ec2' typed in the search box and the 'Amazon EC2' service listed first") 
 
 ![Caption.](../fig/aws-credit4research/03-accr-pricing-calculator-ec2.png "AWS Pricing Calculator --- EC2."){: width="900px"}
 
 The page "Configure Amazon EC2" below should have appeared. Select the box "Advance estimate" and then scroll down until you see the heading "EC2 Instances". Continue below.
 ![Caption.](../fig/aws-credit4research/04-accr-pricing-calculator-ec2-advEstimate.png "Pricing EC2."){: width="900px"}
 
-In the "EC2 Instances (1)" box, in the search box inside, we have typed t2.medium and this made appear the row "t2.medium --- 4 GiB --- etc". Select this row as shown. Continue below.
+![Caption.](../fig/aws-credit4research/05-accr-pricing-calculator-ec2-t2.medium.png "The 'EC2 Instances (1)' search box showing 't2.medium' typed in and the 't2.medium --- 4 GiB --- etc' listed in the table.") 
 
 ![Caption.](../fig/aws-credit4research/05-accr-pricing-calculator-ec2-t2.medium.png "Pricing t2.medium instance."){: width="900px"}{: width="900px"}
 
-Scroll down until you see the heading "Pricing strategy" shown below. Select the "On-Demand" option as shown in the page. Continue below.
+![Caption.](../fig/aws-credit4research/06-accr-pricing-calculator-ec2-pricing-model.png "'Pricing Strategy' showing 'On-Demand' selected") 
 
 ![Caption.](../fig/aws-credit4research/06-accr-pricing-calculator-ec2-pricing-model.png "Choosing pricing model."){: width="900px"}
 
-Scroll down until you see the heading "Amazon Elastic Block Storage (EBS)" shown below. As shown in the page, enter 120 for the option "Storage amount" and set the option "Snapshot Frequency" to "No snapshot storage" with the drop-down menu on the right. Continue below.
+![Caption.](../fig/aws-credit4research/07-accr-pricing-calculator-ec2-120EBS.png "'Amazon Elastic Block Storage (EBS)' showing 120 in 'Storage amount' and 'Snapshot Frequency' set to 'No snapshot storage'.") 
 
 ![Caption.](../fig/aws-credit4research/07-accr-pricing-calculator-ec2-120EBS.png "Pricing EBS storage."){: width="900px"}
 
-Scroll down until the very end of the page where you will see your "Amazon EC2 estimate", shown below. 
+![Caption.](../fig/aws-credit4research/08-accr-pricing-calculator-total-monthly-estimate.png "The Monthly cost estimate.") 
 
 The costs shown correspond to the *monthly* fees of each service and the total for both services in US dollars.
 
@@ -193,13 +192,13 @@ The page that appears (below) will show your cost estimate for 12 months at the 
 
 Note the options at the top: **Add service**, **Add support**, .., and **Share**.
 
-Obviously you can add another service if you click on **Add service**: it will display the page "Select service" where we started (where we type **ec2**), for you to select a service, configure it, and finally add it to your cost estimate and that will bring you back to the page below, showing your cost estimate for 12 months updated and listing the newly added service too. Try it. You can create as many cost estimates as you want. They are deleted after three years. 
+In this example, we do not need to add any services but you could add more using **Add service**. You can create as many cost estimates as you want. They are deleted after three years. 
 
-The option **Share** is for you to share your cost estimate: to save it (somewhere in AWS servers) and to get the URL (web address) to access it and share it by sharing the URL.  
+![Caption.](../fig/aws-credit4research/09-accr-pricing-calculator-annual-estimate.png "The Annual cost estimate.") 
 
-That is the URL you need to enter in your ACCR application, in the field *Save and Share URL from AWS Pricing Calculator*. 
+**Share** is what you need for your application. Click on **Share**
 
-Click on **Share** and continue below.
+You will then be asked to **Agree and continue** to save your cost estimate and given the opportunity to **Copy public link** to the estimate. This is the URL you need for your application.
 
 ![Caption.](../fig/aws-credit4research/09-accr-pricing-calculator-annual-estimate.png "Annual cost estimate."){: width="900px"}
 ![Caption.](../fig/aws-credit4research/10-accr-pricing-calculator-annual-estimate-details.png "Cost estimate details."){: width="900px"}
