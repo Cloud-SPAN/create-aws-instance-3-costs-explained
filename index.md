@@ -2,9 +2,13 @@
 layout: lesson
 root: .
 ---
-The cost of using AWS services depends on (1) the kind of services used such as compute, storage, networking, etc., (2) whether the *AWS Free Tier* is applicable, (3) whether *AWS Cloud Credit for Research* is available, and (4) the *pricing model* under which services are used.
+The cost of using AWS services depends on:
+1. the kind of services used such as compute, storage, networking, etc., 
+2. whether the *AWS Free Tier* is applicable, 
+3. whether *AWS Cloud Credit for Research* is available, and 
+4. the *pricing model* under which services are used.
 
-The *AWS Free Tier* enables you to use **for free** some services within some limits in time and capacity. For example, if you created your instance in the last lesson using the suggested instance type *t2.micro*, your instance will **not** incur any cost during the 12 months from the time you opened your account. In the first episode of this lesson you will learn the scope of the AWS Free Tier, the free usage limits of the services used by your instance, how to check your service usage is within the free limits, and how to read your bills. 
+The *AWS Free Tier* enables you to use **for free** some services within some limits in time and capacity. For example, if you created your instance in the last lesson using the instance type *t2.micro*, your instance will **not** incur any cost during the 12 months from the time you opened your account. In the first episode of this lesson you will learn the scope of the AWS Free Tier, the free usage limits of the services used by your instance, how to check your service usage is within the free limits, and how to read your bills. 
 
 The *AWS Cloud Credit for Research*  is credit towards the costs of using AWS services that is available to faculty, researchers and students at an accredited research institution. Graduate, post-graduate and PhD students are eligible. Student awards can be up to a maximum of US $5,000.00, but the awarded amount will depend on the research project description, the AWS services required, and the cost estimate  of service usage as documented in your application. You will learn how to prepare your project and cost estimate to apply for *AWS Cloud Credit for Research* in the second episode.
 

@@ -3,17 +3,18 @@ title: "The AWS Free Tier"
 teaching: 20
 exercises: 10
 questions:
+- How much will your instance cost?
 - What covers the AWS Free Tier?
 - How to know your service usage is within the Free-Tier limits?
 - How much will you pay should you exceed the Free-Tier limits?
 objectives:
-- Know the scope and limits the AWS Free Tier.
+- Know the scope and limits of the AWS Free Tier.
 - Know how to check your AWS service usage as compared to the Free-Tier limits?
 - Understand how AWS billing works?
 keypoints:
 - The AWS Free Tier is available to any business or personal AWS account. 
-- It has three schemes, *12 months free*, *Free Trials*, and *Always Free*, that apply to different types of service.
-- Your instance uses *12 months free* services, EC2 compute and EBS storage services, and *Always Free* services, KMS login key management and Data Transfer services. 
+- It has three schemes, *12 months free*, *Free Trials*, and *Always Free* that apply to different types of service.
+- Your instance may use *12 months free* services, EC2 compute and EBS storage services, and *Always Free* services, KMS login key management and Data Transfer services. EC2 and EBS free service quotas **only apply** to instances using t2.micro instance type and up to 30 GB storage.
 - You can easily check your service usage as compared to the Free-Tier limits in the Billing Dashboard option **Free Tier** and your bills in the option **Bills**. Check the first one every few days.
 ---
 > ## Prerequisites
@@ -21,76 +22,171 @@ keypoints:
 {: .prereq}
 
 # Introduction
-The [AWS Free Tier](https://aws.amazon.com/free) covers more than 100 AWS services including the compute and storage services you used to create your instance in the previous lesson. Service usage covered by  the AWS Free Tier has limits, however, both in time and in capacity, and you will be billed as soon as you surpass these limits. 
+The [AWS Free Tier](https://aws.amazon.com/free) covers more than 100 AWS services including the compute and storage services you used to create your instance in the previous lesson. Service usage covered by  the AWS Free Tier has limits, however, both in time and in capacity, and you will be billed as soon as you surpass these limits.  The AWS Free Tier has three schemes (plans /offers): 
+1. *12 months free*
+2. *Free Trials*
+3. *Always free*
 
-The AWS Free Tier has three schemes (offers/plans): (1) *12 months free*, (2) *Free Trials*, (3) and *Always free*. The *12 months free* scheme lasts for 12 months from the moment you opened your account and covers typical IT services such as servers, storage and networking. This scheme covers the instance you created in the last lesson but only if you created it using the t2.micro instance type we suggested; if so, you will not be billed for one year.
+The *12 months free* scheme lasts for 12 months from the moment you opened your account and covers typical IT services such as servers, storage and networking. This scheme will cover the instance you created in the last lesson **but only** if you created it by combining the Genomics AMI with the instance type t2.micro; if so, you will not be billed for one year.
 
-The *Free Trials* scheme covers somewhat more specialised services such as machine learning. It is valid either for short-term periods of 1-3 months of for a number of service invocations. Free Trials start from the date you activate (start using) a particular service and will terminate after the specified time period expires or the number of service invocations is reached; you will then be billed for any usage of the service. 
+The *Free Trials* scheme covers somewhat more specialised services such as machine learning. It is valid either for short-term periods of 1-3 months or for a number of service invocations. Free Trials start from the date you activate (start using) a particular service and will terminate after the specified time period expires or the number of service invocations is reached; you will then be billed for any usage of the service. 
 
 The *Always Free* scheme covers a variety of services some of which have an auxiliary role. For example, you will recall that in using your instance you must use an encrypted key file to login to your instance and, through the program `ssh`, you enter shell commands and get data/results that are transferred between your local computer and your instance. In so doing, you are using two *always-free* services: the *AWS Key Management Service* to securely access your instance and the *AWS Data Transfer* service to tranfer data into and out from your instance. These services have always-free monthly quotas of 20,000 requests and 100 GB respectively. If you surpass those quotas in a month, you will be billed. 
 
-In the remainder of this episode we will only cover the Free-Tier aspects that apply to the instance your created in the last lesson:
-
 > ## Topics covered:
 >
-> 1. **Services used by your instance and their Free-Tier usage quotas**.\
-> You will learn what services comprise your instance, their free usage limits, and how the usage limits are applied.
+> 1. [**The cost of your instance (no Free Tier)**](#1-the-cost-of-your-instance-no-free-tier).\
+> You will learn what AWS services are used by your instance and the cost of your instance once the Free-tier period is finished.
 >
-> 2. **Checking your service usage as compared to Free-Tier quotas**.\
+> 2. [**Free-tier quotas related to your instance**](#2-free-tier-quotas-related-to-your-instance).\
+> You will learn the Free-tier quotas related to your instance and whether they are applicable to your instance which depends on the configuration of your instance.
+>
+> 3. [**Check your service use as compared to Free-tier quotas**](#3-check-your-service-use-as-compared-to-free-tier-quotas).\
 > You will learn how to check your service usage and how service usage is measured and billed.
 >
-> 3. **Understanding your bills**.\
+> 4. [**Understanding your bills**](#4-understanding-your-bills).\
 > You will learn how bills are organised and how billing is applied.
 {: .callout}
 
+# 1. The cost of your instance (no Free Tier)
+The instance you created in the previous lesson makes use of these services:
+- Amazon Elastic Compute Cloud (EC2) 
+- Amazon Elastic Block Storage (EBS) 
+- AWS Key Management Service (KMS) 
+- AWS Data Transfer (DT) service 
 
-# 1. Services used by your instance and their Free Tier usage quotas
+The cost of your instance depends on the cost of those services and how much use your instance makes of each service. You may not incur any cost if the Free Tier is applicable but we will explore this scenario in the next section. 
 
-The instance you created in the previous lesson uses these Free-Tier services:
-- Amazon Elastic Compute Cloud (EC2) --- 12-months free with a monthly quota
-- Amazon Elastic Block Storage (EBS)  --- 12-months free with a monthly quota
+In this section we are going to find out the cost your instance will incur when the Free Tier one-year period has finished, based on the use that your instance makes of those services. In so doing, we will present some data regarding those costs which were gathered from Amazon Web Service pages in May 2023. Note that the costs presented are those for AWS Region of Ireland.
+
+### Compute (EC2) cost
+The compute cost of your instance is determined by the **instance type** you chose in creating your instance. The table below shows the cost per hour, number of processors (vCPUs), and main memory size of the instance types so far mentioned in the course (there many more instance types). The data in the table was taken from the [Amazon EC2 On-demand Pricing](https://aws.amazon.com/ec2/pricing/on-demand/) page.
+
+> ## The cost and specifications of AWS instance types relevant to this course
+>
+> | Instance type | On-demand hourly rate | vCPUs | Main memory | Comments
+> |---------------|-------------|---------------|----|----|----|----|
+> | t2.micro |	$0.0126 | 1 | 1 GiB | Free tier eligible --- suggested for your Genomics instance |
+> | t3.micro |	$0.0114	| 2 | 1 GiB | Free tier eligible --- only if t2.micro is not available in the AWS region where the instance is created |
+> | t3.small |	$0.0228	| 2 | 2 GiB	| Used for Cloud-SPAN Genomics workshop instances |
+> | t3.2xlarge | $0.3648 |	8 |	32 GiB | Used for Cloud-SPAN Metagenomics workshop instances |	
+{: .callout}
+
+Based on the cost per hour in the table, the compute cost per day and per month in US dollars of the instance you may have created in the previous lesson will be:
+
+| AMI - instance type | Compute Cost per day | Compute Cost per month |
+|---------------|-------------|---------------|
+| **Genomics - t2.micro** instance | $**0.3024** = $0.0126 x 24 hours | $**9.072** = $0.0126 x 24 hours x 30 days |
+| **Genomics - t3.small** instance | $**0.5472** = $0.0228 x 24 hours | $**16.416** = $0.0228 x 24 hours x 30 days |
+| **Metagenomics - t3.2xlarge** instance | $**8.7552** = $0.3648 x 24 hours | $**262.656** = $0.3648 x 24 hours x 30 days | 
+
+> ## Your instance incurs **compute cost** only when it is running.
+> Compute cost is billed per second, with a minimum of 60 seconds, see the [Amazon EC2 pricing](https://aws.amazon.com/ec2/pricing/) page and scroll down to the heading "Per-second billing". Thus even though AWS presents the cost per hour, you will be charged for the minutes your instance is running. 
+{: .callout}
+
+### Storage (EBS) cost
+The storage cost of your instance is determined by the **size** of the **Cloud-SPAN AMI** you chose in creating your instance. The size of the Genomics AMI is 30 GB, while the size of both Metagenomics AMIs is 240 GB.
+
+There are different types of EBS storage, each type with a different price, as described in the [Amazon EBS pricing](https://aws.amazon.com/ebs/pricing/) page. 
+
+The type of storage used by all Cloud-SPAN AMIs is *General Purpose SSD (gp2) Volumes* and its cost is US $**0.11** per GB-month of provisioned storage. That is:
+
+*Storage cost* &nbsp; = &nbsp; 0.11 &nbsp; x &nbsp; provisioned_storage_size &nbsp; x &nbsp; time_units_used &nbsp; / &nbsp; total_time_units_in_month
+
+Thus the storage cost per day and per month in US dollars of the instance you may have created in the previous lesson will be:
+
+| AMI - storage size | Storage Cost per day | Storage Cost per month |
+|---------------|-------------|---------------|
+| **Genomics - 30 GB** storage  | $**0.11** = $0.11 x 30 GB x 24 hours /(24 hours x 30-day month)| $**3.30** = $0.11 x 30 days |
+| **Metagenomics - 240 GB** storage | $**0.88** = $0.11 x 240 GB x 24 hours/(24 hours x 30-day month)  | $**26.4** = $0.88 x 30 days | 
+
+> ## Your instance incurs **storage cost** while it exists:
+>  You need to delete (terminate) your instance to stop incurring storage cost. Storage costs are billed by the second too, with a minimum of 60 seconds. We used hours as the time unit in the calculations above to simplify them but AWS will use seconds to bill your storage cost. 
+{: .callout}
+
+### Key management service (KMS) cost
+The key management service is related to the login keys you must use to be able to login to your instance. The cost is US $0.03 per 10,000 requests as described in the [AWS Key Management Service Pricing](https://aws.amazon.com/kms/pricing/) page. 
+
+However, KMS is a Free tier *Always free* service with 20,000 requests per month calculated across all Regions that the service is available. Thus only if you exceed 20,000 login requests you will be charged.
+
+### Data transfer (DT) cost
+The data transfer service has to do with data you transfer **from your instance** out to somewhere in the Internet including your laptop or desktop, and **into your instance**. You use the DT service when you use the programs `ssh`, `scp`, `curl`, `wget`.
+
+There is **no cost** for **data transfers into** your instance. 
+
+For data you transfer from your instance, DT is a Free tier *Always free* service with "100GB of data transfer out to the internet free each month, aggregated across all AWS Services and Regions (except China and GovCloud)".
+
+Once you exceed the free 100GB, you will be charged as follows:
+- US $0.09 per GB for the first 10 TeraBytes (TB) per month, 
+- US $0.085 per GB for the next 40 TB per/month
+- ... 
+ 
+See more details on the [Amazon EC2 On-Demand Pricing](https://aws.amazon.com/ec2/pricing/on-demand/) page, scrolling down to "Data Trasnfer".
+
+### The total monthly cost of your instance --- no Free Tier
+For most practical purposes, we can assume the KMS and DT services are free. You will rarely exceed the Free Tier quotas of these services, 20,000 requests and 100GB.  
+
+Thus the total monthly cost of your instance considering only the EC2 compute cost and the EBS storage cost will be: 
+
+| AMI - instance type - storage size | Compute Cost /day | Compute Cost /month | Storage Cost /month | Total Cost /month |
+|---------------|-------------|---------------|---|----| 
+| Genomics - t2.micro - 30 GB | $**0.3024** | $**9.072** | $**3.30** | $**12.372** |
+| Genomics - t3.small - 30 GB | $**0.5472** | $**16.416** | $**3.30** | $**19.716** |
+| Metagenomics - t3.2xlarge - 240 GB | $**8.7552** | $**262.656** | $**26.4** | $**289.056** |
+
+
+# 2. Free-tier quotas related to your instance
+These are the Free Tier quotas that **may** apply to your instance:
+- Amazon Elastic Compute Cloud (EC2) --- 12-months free with a monthly quota of 750 hours
+- Amazon Elastic Block Storage (EBS) --- 12-months free with a monthly quota of 30 GB-month
 - AWS Key Management Service (KMS) --- always-free 20,000 requests per month
 - AWS Data Transfer (DT) service --- always-free 100 GB per month
 
-This section covers EC2 and EBS. KMS and DT are covered in the next section.
+We have already discussed the KMS and DT service quotas in the previous section. 
 
-To find out about the EC2 and EBS services and their free quotas, go to the [AWS Free Tier](https://aws.amazon.com/free) web page and scroll down with the mouse until you see the heading **Free Tier Details** on the left --- see the page below (no need to login to your account yet). 
+This section will describe in detail the applicability of the EC2 and EBS service quotas. Briefly, you can only benefit of these service quotas if your instance uses a t2.micro instance type and has up to 30 GB storage. That is, if you created your instance with the Genomics AMI and the t2.micro instance type, **you will not incur any cost** for one year from the time you opened your account.  If you created your instance otherwise (either using a different instance type with the Genomics AMI or using any of the Metagenomics AMIs), **you will incur some cost**.
 
-### The compute service of your instance: EC2
+### The compute service (EC2) Free-tier details
 
-To see the details of the EC2 Free Tier that apply to your instance, in the page below we have checked the Tier Type filter **12 Months Free** (on the left) and hovered the mouse cursor over the box labelled **Amazon EC2 750 Hours** so that all the information details in the box are uncovered --- we added the two red lines for convenience. 
+The EC2 Free Tier is described in the [AWS Free Tier](https://aws.amazon.com/free) page ---  scroll down until you see the heading **Free Tier Details** on the left, see the page below (no need to login to your account yet).   
 
-![Caption.](../fig/02-ec2-free-tier.png "EC2 compute Free Tier details.")
+In the page below we have checked the Tier Type filter **12 Months Free** (on the left) and hovered the mouse cursor over the box labelled **Amazon EC2 750 Hours** so that all the information details in the box are uncovered --- we added the two red lines for convenience. 
 
-You can read in that box that: (1) you have 750 hours **per month**, which amounts to 750/31 = 24.19 hours for each day in a month; (2) you can use those hours running **Linux**, **RHLS** (Red Hat Enterprise Linux), and **SLES** (Suse Linux Enterprise Server) with instances of type **t2.micro** or **t3.micro** whichever is available in the region you create the instance, and (3) you can have other 750 hours per month to run Windows with instances of type **t2.micro** or **t3.micro** whichever is available in the region you create the instance.
+![Caption.](../fig/02-ec2-free-tier.png "EC2 compute Free Tier details."){: width="900px"}
 
-Clearly, the point (1) above means that you can run your t2.micro instance continuously until your Free Tier expires without incurring any cost, but see notes below. 
+You can read in that box that: 
+1. You have 750 hours **per month**, which amounts to 750/31 days = 24.19 hours for each day in a month. 
+2. You can use those hours running **Linux**, **RHLS** (Red Hat Enterprise Linux), and **SLES** (Suse Linux Enterprise Server) with instances of type **t2.micro**, or t3.micro **but only** if t2.micro is not available in the AWS region where you create your instance.  
+3. You can have other 750 hours per month to run Windows with instances of type **t2.micro**, or t3.micro but only if t2.micro is not available ..
+
+Clearly, point (1) above means that you can run a t2.micro instance **continuously** until your Free Tier expires without incurring any cost, but see notes below. 
 
 > ## Remember this:
 > - The 750 hours for Linux instances cannot be combined with the 750 hours for Windows intances.  
-> - The 750 hours for Linux and Windows instances apply globally to your account, not to a region and not to an instance. That is, the 750 hours in a month are divided among the number of Linux (or Windows) t2.micro instances that you run in the month in any region. If you run two or more t2.micro instances continuously for one month or longer, you will incur some cost.  
-> - Unused hours in a month do not roll over to the next month.
+> - The 750 hours for Linux and Windows instances **apply globally to your account**, not to a region and not to an instance. That is, the 750 hours in a month are divided among the number of Linux (or Windows) t2.micro instances that you run in the month in any region. If you run two or more t2.micro instances continuously for one month or longer, you will incur some cost.  
+> - Unused hours in a month **do not roll over** to the next month.
 {: .callout}
 
-### The storage service of your instance: EBS
+### The storage service (EBS) Free-tier details
 
-To see the details of the EBS Free Tier that apply to your instance, scroll further down the AWS Free Tier web page until you see the box labelled **Amazon Elastic Block Storage 30GB** and then hover the mouse cursor on the box  shown below:
+To see the details of the EBS Free Tier, scroll further down the AWS Free Tier page until you see the box labelled **Amazon Elastic Block Storage 30GB** and then hover the mouse cursor on the box --- it should look like below:
 
-![Caption.](../fig/03-ebs-free-tier.png "EBS storage Free Tier details.")
+![Caption.](../fig/03-ebs-free-tier.png "EBS storage Free Tier details."){: width="900px"}
 
-You can read in that box that: (1) you can use up to 30GB of EBS storage for 12 months; (2) EBS storage can be **SSD** (Solid State Drive) storage or magnetic (previous generation) storage with up 2 million Input/Ouput (I/O) operations; and (3) you have up to 1GB of snapshot storage. 
+You can see in the page that: (1) you can use up to 30GB of EBS storage for 12 months; (2) EBS storage can be **SSD** (Solid State Drive) storage or magnetic (previous generation) storage with up 2 million Input/Ouput (I/O) operations; and (3) you have up to 1GB of snapshot storage. 
 
-The instance you created in the last lesson is using 30 GB of SSD storage. 
+The Genomics AMI uses 30 GB of SSD storage and the Metagenomics AMIs 240 GB of SSD storage. Thus only instances created with the Genomics AMI are Free-tier eligible.
 
 Snapshots are used for backups but your instance does not perform any backups.
 
 > ## Remember this:
-> - The Free Tier 30 GBs EBS storage applies to your account. As your instance is using that many GBs, you cannot use more storage of any type (SSD or magnetic) without incurring some cost. Of those 30 GBs, 12 GBs are free for your data and applications.
+> - The Free Tier 30 GBs EBS storage applies to your account. If your instance was created with the Genomics AMI, it is using that many GBs, and you cannot use more storage of any type (SSD or magnetic) without incurring some cost. 
+> - Of those 30 GBs in an instance created with the Genomics AMI, 12 GBs are free for data and to install other software applications.
 {: .callout}
 
-# 2. Checking your service usage as compared to Free Tier quotas
+# 3. Check your service use as compared to Free-tier quotas
 
-AWS bills users monthly and Free-Tier eligible services have monthly quotas or limits. You must not surpass these quotas in each month if you don't want to incur costs while your Free Tier is active. To find out how much in the current month you have used of your monthly Free-Tier allowance, login to your IAM account and go to the **Billing Dashboard** using the drop-down menu *user@accountalias* (or *user@accountnumber* if you did not create an alias) on the top right. Then, on the navigation pane on the left, under Billing, click on **Free Tier**. A page similar to the one below will apppear.
+AWS bills users **monthly**. Free-Tier eligible services have **monthly** quotas or limits. You must not surpass these quotas in each month if you don't want to incur costs while your Free Tier is active. To find out how much in the current month you have used of your monthly Free-Tier allowance, login to your IAM account and go to the **Billing Dashboard** using the drop-down menu *user@accountalias* (or *user@accountnumber* if you did not create an alias) on the top right. Then, on the navigation pane on the left, under Billing, click on **Free Tier**. A page similar to the one below will apppear.
 
 ![Caption.](../fig/05-free-tier-usage-excedeed01Table.png "Free Tier usage summary table.")
 
@@ -98,7 +194,7 @@ The table shows the usage in the current month of each Free-Tier eligible servic
 
 **MTD** stands for the period of time between the 1st of the current month and the last finalized day before the current date.
 
-Any service created or used in a month will contribute to the corresponding service usage of the month even if the service is deleted early in the month.
+Any service created or used in a month will contribute to the corresponding service usage of the month, even if the service is deleted early in the month.
 
 The first two rows correspond to the **EBS storage** and the **EC2 compute** services presented earlier. Note that EBS storage ("30 GB of Amazon Elastic Block Storage") is reported as being of type *Amazon Elastic Compute Cloud*. The reason is that this storage is *inherent* to your instance: it was created as the root device to hold the software environment (the Cloud-SPAN AMI) of your instance, and, by default, it is deleted when your instance is deleted. You can change this default or deattach the root device before deleting your instance if you want to preserve the storage. Note that there are other types of AWS storage such as S3 (Simple Storage Service) which you can use without attaching them to an instance. S3 is reported as "Simple Storage Service".
 
@@ -108,7 +204,7 @@ The fourth column corresponds to the AWS **Data Transfer** service which allows 
 
 ### **Notes on service usage**
 
-#### **Usage of EBS storage is measured in GB-Month**'s (GB-Mo in the tabxsle):
+#### **Usage of EBS storage is measured in GB-Month**'s (GB-Mo in the table):
 ![Caption.](../fig/05-free-tier-usage-excedeed02EBS-row.png "EBS storage Free Tier usage table row.")
 
 GB-Month  is a measure of **how many giga bytes** of EBS storage are provisioned to your account and **how long** the EBS storage is provisioned to your account. It is computed thus:
@@ -122,26 +218,26 @@ GB-Month  is a measure of **how many giga bytes** of EBS storage are provisioned
 > - *hours_in_month* is the total number of hours in the current month.
 {: .callout}
 
-Note that we have used hours as time unit in the formula above and the examples below to simplify the presentation, but you can use minutes or seconds instead of hours in order to get a more precise calculation. AWS uses seconds, see [EBS pricing](https://aws.amazon.com/ebs/pricing/).
+Note that we have used **hours as time unit** in the **formula above** and the **examples below** to simplify the presentation, but you can use minutes or seconds instead of hours in order to get a more precise calculation. AWS uses seconds, see [EBS pricing](https://aws.amazon.com/ebs/pricing/).
 
 Let's see an example of how that formula works for your account assuming you have created only one instance with 30 GBs of EBS storage.
 
-> ## GB-Month calculation example for an account using 30 GB EBS storage for the specified period in hours:
+> ## GB-Month calculation example for using 30 GB EBS storage for 1 month and 8 days:
 > **Formula**:  30 GB * usage_hours / (days_in month * 24 hours per day)
 >
-> **One-month usage** (usage_hours = days_in_month * 24):\
+> For **one-month usage** in hours, usage_hours = days_in_month * 24:
 >
 > in a 30-day month:  30 * 30 * 24 / (30 * 24 ) = 30 GB-Month's\
 > in a 31-day month:  30 * 31 * 24 / (31 * 24 ) = 30 GB-Month's\
 > in 28-day February: 30 * 28 * 24 / (28 * 24 ) = 30 GB-Month's
 >
-> **8-day usage** (usage_hours = 8 * 24):\
+> For **8-day usage** in hours, usage_hours = 8 * 24:\
 > in a 30-day month:  30 * 8 * 24 / (30 * 24 ) = 8 GB-Month's\
 > in a 31-day month:  30 * 8 * 24 / (31 * 24 ) = 7.74 GB-Month's\
 > in 28-day February: 30 * 8 * 24 / (28 * 24 ) = 8.57 GB-Month's
 {: .callout}
 
-You can see that GB-Month measures EBS usage the same for any month regardless of the number of days in the month, but somewhat differently for a given number of days smaller than the number of days in the month that applies, 8 in the example.
+You can see that GB-Month measures EBS usage the same for any month regardless of the number of days in the month, but somewhat differently for a given number of days smaller than the number of days for a given month, 8 in the example.
 
 Let's see a billing example assuming your 12-month Free Tier has expired.
 
@@ -230,7 +326,7 @@ While forecasted usage values in the AWS Free-Tier Summary table (columns 4th an
 > If you use an instance with more capacity for less than a month, you must stop it for some time once you don't need the higher capacity in order not to incur any cost. The calculations to know how much more capacity and for how long you can use without incurring any cost are similar to those shown above for EBS storage.
 {: .callout}
 
-# 3. Understanding your bills
+# 4. Understanding your bills
 AWS bills users every month and the bill of the previous month is available on the 3rd or 4th of the current month. You can access your AWS bills any time in the Billing Dashboard as follows. Login to your IAM account and go to the Billing Dashboard using the drop-down menu **user@accountalias**(or **user@accountnumber** if you did not create an alias) on the top right. Then, on the navigation pane on the left, under Billing, click on **Bills**. A page similar to the one below will apppear.
 
 The page shows a summary of the current month bill (April 2022). At the top, under Bills, the **Date** drop-down menu enables you access previous bills. 
@@ -239,17 +335,21 @@ Under "Details - AWS Service Charges", the services being used by our account ar
 
 ![Caption.](../fig/06-aws-bill-page01.png "AWS Bills - Example 1.")
 
-In the figure below we have expanded the drop-down menu of the **Elastic Compute Cloud** (EC2) service. Service usage and cost is grouped by region. Our account shows only the Ireland region for EC2 as we are using EC2 only in that region (below is an example showing multiple regions).
+In the figure below we have expanded the drop-down menu of the **Elastic Compute Cloud** (EC2) service. Service usage and cost is grouped by region. Our account shows only the Ireland region for EC2 as we are using EC2 in that region only (below is an example showing multiple regions).
 
 Note that we have used 93.542 hours of the EC2 service and 13.549 GB-Month's of the EBS storage service, yet the incurred cost for each service is $0.00 because what we have used of each service so far within the month is within the monthly Free-Tier quota of each service. 
 
-Had our Free Tier expired, the costs shown in the table would be: 93.542 hours *times* $0.0126 USD per hour of t2.micro instance = **$1.178** for the EC2 service so far in the month, and 13.549 GB-Months *times* $0.11 USD per GB-Month = **$1.49** for EBS service likewise. 
+Had our Free Tier expired, the costs shown in the table would be: 
+- 93.542 hours *times* $0.0126 USD per hour of t2.micro instance = **$1.178** for the EC2 service so far in the month, and 
+- 13.549 GB-Months *times* $0.11 USD per GB-Month = **$1.49** for the EBS storage service so far in the month. 
 
 ![Caption.](../fig/06-aws-bill-page02EC2-EBS.png "AWS Bills - Example 2.")
 
 The figure below shows a billing example for EC2 service usage involving two regions and two  (Free-Tier eligible) t2.micro instances and the Free Tier being active but exceeded. Recall that each account has Free-Tier 750 hours per month of t2.micro instance service. 
 
-Instance 1 in the Northen Virginia region ran for 746 hours in the month with no cost, and leaving 750 - 746 = 4 Free-Tier hours still to be used. Instance 2 in the Oregon region ran for 534 hours. Of these hours, 4 incurred no cost as the 4 Free-Tier hours still to be used were applied. Thus only 530 hours were actually billed for a cost of 530 hours *times* $0.0125 USD per hour of t2.micro instance = $6.36.
+The **instance** in the Northen Virginia region (1 in red in the figure below) ran for 746 hours in the month with no cost, leaving 750 - 746 = 4 Free-Tier hours still to be used. 
+
+The **instance** in the Oregon region (2) ran for 534 hours. Of these hours, 4 incurred no cost as the 4 Free-Tier hours still to be used were applied. Thus only 530 hours were actually billed for a cost of 530 hours *times* $0.0125 USD per hour of t2.micro instance = **$6.36**.
 
 ![Caption.](../fig/07-aws-bill-exceeding-free-tier2.png "AWS Bills - Example 3.")
 
