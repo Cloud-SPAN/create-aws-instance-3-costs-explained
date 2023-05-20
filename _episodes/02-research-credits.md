@@ -75,7 +75,7 @@ You will be informed of the **the outcome of your application** in an email from
 
 If your application is successful, you will receive Promotional Credit directly applied to your AWS account or an email with a *Promotion Code* to redeem in your account on the **Billing Dashbord**. 
 
-If your application is **not** successful, you can submit **revised** application
+If your application is **not** successful, you can submit your **revised** application
 
 ![Caption.](../fig/aws-credit4research/01-accr-redeeming-credit.png "Redeeming AWS Promotion Code."){: width="900px"}
 
@@ -192,16 +192,14 @@ The page that appears (below) will show your cost estimate for 12 months at the 
 
 Note the options at the top: **Add service**, **Add support**, .., and **Share**.
 
-In this example, we do not need to add any services but you could add more using **Add service**. You can create as many cost estimates as you want. They are deleted after three years. 
+![Caption.](../fig/aws-credit4research/09-accr-pricing-calculator-annual-estimate.png "Annual cost estimate."){: width="900px"}
+![Caption.](../fig/aws-credit4research/10-accr-pricing-calculator-annual-estimate-details.png "Cost estimate details."){: width="900px"}
 
-![Caption.](../fig/aws-credit4research/09-accr-pricing-calculator-annual-estimate.png "The Annual cost estimate.") 
+In this example, we do not need to add any services but you could add more using **Add service**. You can create as many cost estimates as you want. They are deleted after three years. 
 
 **Share** is what you need for your application. Click on **Share**
 
 You will then be asked to **Agree and continue** to save your cost estimate and given the opportunity to **Copy public link** to the estimate. This is the URL you need for your application.
-
-![Caption.](../fig/aws-credit4research/09-accr-pricing-calculator-annual-estimate.png "Annual cost estimate."){: width="900px"}
-![Caption.](../fig/aws-credit4research/10-accr-pricing-calculator-annual-estimate-details.png "Cost estimate details."){: width="900px"}
 
 The two options below will appear, one at a time. 
 
