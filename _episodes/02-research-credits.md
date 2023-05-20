@@ -165,7 +165,7 @@ Scroll to the end of page to see your "Amazon EC2 estimate". This is the *monthl
 
 ![Caption.](../fig/aws-credit4research/08-accr-pricing-calculator-total-monthly-estimate.png "The Monthly cost estimate.") 
 
-The page will ow show your cost estimate for 12 months at the top, and the details of your instance configuration below: Ireland region, intance type t2.medium, 120 EBS storage, On-Demand Pricing strategy.
+The page will now show your cost estimate for 12 months at the top, and the details of your instance configuration below: Ireland region, intance type t2.medium, 120 EBS storage, On-Demand Pricing strategy.
 
 Note the options at the top: **Add service**, **Add support**, .., and **Share**.
 
