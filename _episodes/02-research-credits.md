@@ -59,13 +59,7 @@ If you want to learn cloud skills rather than conduct research, the [AWS Educate
 
 The awarded amount will depend on the research proposal and AWS service  requirements in your application. An award is referred to as **AWS Promotional Credit** or **Promotional Credit**.  The Promotional Credit you receive may be **less** than you applied for. 
 
-Once you receive an award, it is referred to as **AWS Promotional Credit** or **Promotional Credit**.  The Promotional Credit you receive may be **less** than what you asked in your application. This may be because AWS is "encouraging a different cost model leveraging *spot instances* or providing funding for a smaller, initial proof of concept portion of a new project".
-
-Promotional credit **has some restrictions in use**. Usage of EC2 services is **only covered** under the pricing schemes *pay-as-you-go* (also known as *on-demand*) and *Spot Instances* only. Also, Promotional Credit **cannot be used** to pay for **previous charges** or charges for any of the folllowing AWS services: 
-
-"*Amazon Mechanical Turk, AWS Managed Services, Ineligible AWS Support, AWS Marketplace, AWS Professional Services, AWS Training, AWS Certification, Amazon Route 53 domain name registration or transfer, any Services for mining for cryptocurrency, any other Services as may be designated by your AWS contracting entity, or any upfront fee for any Services such as Savings Plans and Reserved Instances (collectively, “Ineligible Services”). For purposes of this Section 1, “Ineligible AWS Support” means AWS Support (as described on the AWS Site) that is at the Enterprise Support level*". 
-
-**You will be billed** if you use any of those services. 
+Promotional credit **has some restrictions in use**. Usage of EC2 services is **only covered** under the pricing schemes *pay-as-you-go* (also known as *on-demand*) and *Spot Instances* only and **cannot be used** to pay for **previous charges**. 
 
 Please see other restrictions and guidelines in the [AWS Promotional Credit Terms & Conditions](https://aws.amazon.com/awscredits/).
 
@@ -75,9 +69,8 @@ You will be informed of the **the outcome of your application** in an email from
 
 If your application is successful, you will receive Promotional Credit directly applied to your AWS account or an email with a *Promotion Code* to redeem in your account on the **Billing Dashbord**. 
 
-If your application is **not** successful, you can submit your **revised** application
+If your application is **not** successful, you can submit **revised** application
 
-![Caption.](../fig/aws-credit4research/01-accr-redeeming-credit.png "Redeeming AWS Promotion Code."){: width="900px"}
 
 ### Other points you should know
 
@@ -106,23 +99,13 @@ Your research project must include the following (from [ACRC Application Details
 
 1. Description of problem to be solved.
 2. Proposed Amazon Web Services (AWS) solution (including specific AWS tools, timeline, key milestones).
-3. Plan for sharing outcomes (tools, data, and/or resources) created during your project.
-4. Any potential future use of AWS beyond grant duration by individual research groups or broader community.
+3. Plan for sharing outcomes (tools, data, and/or resources) created during project.
+4. Any potential future use of AWS beyond grant duration by individual research group or broader community.
 5. Names of any AWS employees you have been in contact with (this is not a prerequisite for the application).
 6. Any AWS Public Data Sets to be used in your research.
 7. Keywords to facilitate proposal review.
 
-In preparing you research project consider the following:
-
-"AWS approves applications based on factors such as clearly defined outcomes, potential to disseminate the results and data through sharing a pipeline or software, succinctly defined milestones, the applicability of AWS services within the project scope, and value of AWS Promotional Credit requested suited to the scope of the project (as evidenced by a link from the AWS Pricing Calculator to substantiate the AWS Promotional Credit desired)" [\[Factors AWS considers to determine who receive Promotional Credit\]](https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/faqs/proposal-preparation/).
-
-The evaluation of your project by AWS will focus on "\[**A**\] the reusability of the expected outcome of the project and \[**B**\] on  the demonstrated \[proof of concept\] efficacy of AWS for a research workload".
-
-"Examples of reusable outcomes include publicly available AMIs, code repositories, or reduced data sets. Proof of concept or other pilot projects that explore how well AWS services match with common research workloads are also of interest. These might include benchmarks or use case reports".
-
-Should you need to submit your project again, revise the two subjects above, reusability and proof of concept, before resubmitting.
-
-By all means, see if it is at all possible for your Faculty Advisor to revise your project before you submit it. If so, hand in a full version of the project to your Advisor, covering all the steps 1-7, as you may only have one revision by your Advisor and you want feedback on the entire project if possible.
+In preparing your application you should consider [Factors AWS considers to determine who receice Promotional Credit](https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/faqs/proposal-preparation/).
 
 ### Filling the application form
 
@@ -132,7 +115,7 @@ However, the following two fields require preparation:
 - *Save and Share URL from AWS Pricing Calculator*
 - *Project Description*
 
-![Caption.](../fig/aws-credit4research/02-accr-application-form-cost-url-project-description.png "Filling ACCR form --- Estimated Cost and Project Description."){: width="900px"}
+![Caption.](../fig/aws-credit4research/02-accr-application-form-cost-url-project-description.png "The ACCR form with the 'Save and Share URL from AWS Pricing Calculator' and 'Project Description' highlighted") 
 
 The field *Save and Share URL from AWS Pricing Calculator* requires that you enter the URL of the cost estimate of your project. You need to prepare it with the [AWS Pricing Calculator](https://calculator.aws/#/) --- civered in the next topic "3. Getting the cost estimate of your project".
 
@@ -163,22 +146,22 @@ Type **ec2** in the search box to display only the services whose name contain E
 
 ![Caption.](../fig/aws-credit4research/03-accr-pricing-calculator-ec2.png "AWS Pricing Calculator showing the 'Select service' page with 'ec2' typed in the search box and the 'Amazon EC2' service listed first") 
 
-![Caption.](../fig/aws-credit4research/03-accr-pricing-calculator-ec2.png "AWS Pricing Calculator --- EC2."){: width="900px"}
+The "Configure Amazon EC2" page will appear. Select the box "Advance estimate" and then scroll down until you see the heading "EC2 Instances". Continue below.
+![Caption.](../fig/aws-credit4research/04-accr-pricing-calculator-ec2-advEstimate.png "The 'Configure Amazon EC2' with 'Advanced estimate' selected.") 
 
-The page "Configure Amazon EC2" below should have appeared. Select the box "Advance estimate" and then scroll down until you see the heading "EC2 Instances". Continue below.
-![Caption.](../fig/aws-credit4research/04-accr-pricing-calculator-ec2-advEstimate.png "Pricing EC2."){: width="900px"}
+Type "t2.medium" in the "EC2 Instances (1)" search box. This will then list "t2.medium --- 4 GiB --- etc" in the table. Select this row.
 
 ![Caption.](../fig/aws-credit4research/05-accr-pricing-calculator-ec2-t2.medium.png "The 'EC2 Instances (1)' search box showing 't2.medium' typed in and the 't2.medium --- 4 GiB --- etc' listed in the table.") 
 
-![Caption.](../fig/aws-credit4research/05-accr-pricing-calculator-ec2-t2.medium.png "Pricing t2.medium instance."){: width="900px"}{: width="900px"}
+Scroll down to "Pricing strategy" and select "On-Demand".
 
 ![Caption.](../fig/aws-credit4research/06-accr-pricing-calculator-ec2-pricing-model.png "'Pricing Strategy' showing 'On-Demand' selected") 
 
-![Caption.](../fig/aws-credit4research/06-accr-pricing-calculator-ec2-pricing-model.png "Choosing pricing model."){: width="900px"}
+Scroll down again to "Amazon Elastic Block Storage (EBS)", enter 120 in "Storage amount" and set "Snapshot Frequency" to "No snapshot storage".
 
 ![Caption.](../fig/aws-credit4research/07-accr-pricing-calculator-ec2-120EBS.png "'Amazon Elastic Block Storage (EBS)' showing 120 in 'Storage amount' and 'Snapshot Frequency' set to 'No snapshot storage'.") 
 
-![Caption.](../fig/aws-credit4research/07-accr-pricing-calculator-ec2-120EBS.png "Pricing EBS storage."){: width="900px"}
+Scroll to the end of page to see your "Amazon EC2 estimate". This is the *monthly* fee for each service and the total for both services in US dollars. Click on "Add to my estimate"
 
 ![Caption.](../fig/aws-credit4research/08-accr-pricing-calculator-total-monthly-estimate.png "The Monthly cost estimate.") 
 
@@ -186,26 +169,12 @@ The page will now show your cost estimate for 12 months at the top, and the deta
 
 Note the options at the top: **Add service**, **Add support**, .., and **Share**.
 
-![Caption.](../fig/aws-credit4research/09-accr-pricing-calculator-annual-estimate.png "Annual cost estimate."){: width="900px"}
-![Caption.](../fig/aws-credit4research/10-accr-pricing-calculator-annual-estimate-details.png "Cost estimate details."){: width="900px"}
-
 In this example, we do not need to add any services but you could add more using **Add service**. You can create as many cost estimates as you want. They are deleted after three years. 
+
+![Caption.](../fig/aws-credit4research/09-accr-pricing-calculator-annual-estimate.png "The Annual cost estimate.") 
 
 **Share** is what you need for your application. Click on **Share**
 
 You will then be asked to **Agree and continue** to save your cost estimate and given the opportunity to **Copy public link** to the estimate. This is the URL you need for your application.
 
-The two options below will appear, one at a time. 
-
-Click on **Agree and continue** to save your cost estimate. 
-
-Thenk click on **Copy publick link** to get the URL or copy-paste it the usual way. 
-
-![Caption.](../fig/aws-credit4research/11-accr-pricing-calculator-save-estimate.png "Saving cost estimate."){: width="900px"}
-![Caption.](../fig/aws-credit4research/12-accr-pricing-calculator-estimate-public-linkurl.png "Cost estimate URL."){: width="900px"}
-
-That's it. 
-
-This is the end of the course "Create Your Own AWS Instance".
-
-We hope you find it useful. 
+You can now complete you application!

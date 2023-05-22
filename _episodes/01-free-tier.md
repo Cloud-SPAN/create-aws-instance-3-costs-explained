@@ -18,7 +18,7 @@ keypoints:
 - You can easily check your service usage as compared to the Free-Tier limits in the Billing Dashboard option **Free Tier** and your bills in the option **Bills**. Check the first one every few days.
 ---
 > ## Prerequisites
-> You will need to login to your AWS IAM user account to follow the second part of this episode; the instructions to login are in the lesson [Create and manage your AWS instance](https://cloud-span.github.io/create-aws-instance-2-manage-instance/01-create-aws-instance/).
+> You will need to login to your AWS IAM user account to follow the third part of this episode; the instructions to login are in the lesson [Create and manage your AWS instance](https://cloud-span.github.io/create-aws-instance-2-manage-instance/01-create-aws-instance/).
 {: .prereq}
 
 # Introduction
@@ -152,7 +152,7 @@ The EC2 Free Tier is described in the [AWS Free Tier](https://aws.amazon.com/fre
 
 In the page below we have checked the Tier Type filter **12 Months Free** (on the left) and hovered the mouse cursor over the box labelled **Amazon EC2 750 Hours** so that all the information details in the box are uncovered --- we added the two red lines for convenience. 
 
-![Caption.](../fig/02-ec2-free-tier.png "EC2 compute Free Tier details."){: width="900px"}
+![Caption.](../fig/02-ec2-free-tier.png "EC2 compute Free Tier detailsfor each category of use. The Compute category is highlighted so the full detials are shown."){: width="900px"}
 
 You can read in that box that: 
 1. You have 750 hours **per month**, which amounts to 750/31 days = 24.19 hours for each day in a month. 
@@ -171,7 +171,7 @@ Clearly, point (1) above means that you can run a t2.micro instance **continuous
 
 To see the details of the EBS Free Tier, scroll further down the AWS Free Tier page until you see the box labelled **Amazon Elastic Block Storage 30GB** and then hover the mouse cursor on the box --- it should look like below:
 
-![Caption.](../fig/03-ebs-free-tier.png "EBS storage Free Tier details."){: width="900px"}
+![Caption.](../fig/03-ebs-free-tier.png "EBS storage Free Tier details for each category of use. The Amazon Elastic Block Storage 30GB category is highlighted so the full detials are shown."){: width="900px"}
 
 You can see in the page that: (1) you can use up to 30GB of EBS storage for 12 months; (2) EBS storage can be **SSD** (Solid State Drive) storage or magnetic (previous generation) storage with up 2 million Input/Ouput (I/O) operations; and (3) you have up to 1GB of snapshot storage. 
 
@@ -180,13 +180,13 @@ The Genomics AMI uses 30 GB of SSD storage and the Metagenomics AMIs 240 GB of S
 Snapshots are used for backups but your instance does not perform any backups.
 
 > ## Remember this:
-> - The Free Tier 30 GBs EBS storage applies to your account. If your instance was created with the Genomics AMI, it is using that many GBs, and you cannot use more storage of any type (SSD or magnetic) without incurring some cost. 
+> - The Free Tier 30 GBs EBS storage applies to your account. If you created your instance with the Genomics AMI, it is using that many GBs, and you cannot use more storage of any type (SSD or magnetic) without incurring some cost. 
 > - Of those 30 GBs in an instance created with the Genomics AMI, 12 GBs are free for data and to install other software applications.
 {: .callout}
 
 # 3. Check your service use as compared to Free-tier quotas
 
-AWS bills users **monthly**. Free-Tier eligible services have **monthly** quotas or limits. You must not surpass these quotas in each month if you don't want to incur costs while your Free Tier is active. To find out how much in the current month you have used of your monthly Free-Tier allowance, login to your IAM account and go to the **Billing Dashboard** using the drop-down menu *user@accountalias* (or *user@accountnumber* if you did not create an alias) on the top right. Then, on the navigation pane on the left, under Billing, click on **Free Tier**. A page similar to the one below will apppear.
+AWS bills users **monthly** and Free-Tier eligible services have **monthly** quotas or limits. You must not surpass these quotas in each month if you don't want to incur costs while your Free Tier is active. To find out how much in the current month you have used of your monthly Free-Tier allowance, login to your IAM account and go to the **Billing Dashboard** using the drop-down menu *user@accountalias* (or *user@accountnumber* if you did not create an alias) on the top right. Then, on the navigation pane on the left, under Billing, click on **Free Tier**. This will show the Free Tier usage summary table.
 
 ![Caption.](../fig/05-free-tier-usage-excedeed01Table.png "Free Tier usage summary table.")
 
@@ -219,26 +219,11 @@ Under the free tier you have 30 GB-Months per month for 12 months. This means yo
 > -  30 / 50 * 31 days = 18.6 days in March
 {: .callout}
 
-Note that we have used **hours as time unit** in the **formula above** and the **examples below** to simplify the presentation, but you can use minutes or seconds instead of hours in order to get a more precise calculation. AWS uses seconds, see [EBS pricing](https://aws.amazon.com/ebs/pricing/).
+Note that AWS uses actually seconds for calculations but we use hours here to simplify. See [EBS pricing](https://aws.amazon.com/ebs/pricing/).
 
-Let's see an example of how that formula works for your account assuming you have created only one instance with 30 GBs of EBS storage.
-
-> ## GB-Month calculation example for using 30 GB EBS storage for 1 month and 8 days:
-> **Formula**:  30 GB * usage_hours / (days_in month * 24 hours per day)
->
-> For **one-month usage** in hours, usage_hours = days_in_month * 24:
->
-> in a 30-day month:  30 * 30 * 24 / (30 * 24 ) = 30 GB-Month's\
-> in a 31-day month:  30 * 31 * 24 / (31 * 24 ) = 30 GB-Month's\
-> in 28-day February: 30 * 28 * 24 / (28 * 24 ) = 30 GB-Month's
->
-> For **8-day usage** in hours, usage_hours = 8 * 24:\
-> in a 30-day month:  30 * 8 * 24 / (30 * 24 ) = 8 GB-Month's\
-> in a 31-day month:  30 * 8 * 24 / (31 * 24 ) = 7.74 GB-Month's\
-> in 28-day February: 30 * 8 * 24 / (28 * 24 ) = 8.57 GB-Month's
-{: .callout}
-
-You can see that GB-Month measures EBS usage the same for any month regardless of the number of days in the month, but somewhat differently for a given number of days smaller than the number of days for a given month, 8 in the example.
+> ## Important!
+> If you decide to run more than one 30 GB instance (e.g., one 50 GB or two 30 GB) for a shorter time you must terminate your instance by the the time you reach the 30 GB-Month limit.
+{: .prereq}
 
 Let's see a billing example assuming your 12-month Free Tier has expired.
 
