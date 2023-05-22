@@ -182,13 +182,7 @@ The page "Configure Amazon EC2" below should have appeared. Select the box "Adva
 
 ![Caption.](../fig/aws-credit4research/08-accr-pricing-calculator-total-monthly-estimate.png "The Monthly cost estimate.") 
 
-The costs shown correspond to the *monthly* fees of each service and the total for both services in US dollars.
-
-Click on "Add to my estimate" and continue below.
-
-![Caption.](../fig/aws-credit4research/08-accr-pricing-calculator-total-monthly-estimate.png "Monthly cost estimate."){: width="900px"}
-
-The page that appears (below) will show your cost estimate for 12 months at the top, and the details of your instance configuration below: Ireland region, intance type t2.medium, 120 EBS storage, On-Demand Pricing strategy.
+The page will now show your cost estimate for 12 months at the top, and the details of your instance configuration below: Ireland region, intance type t2.medium, 120 EBS storage, On-Demand Pricing strategy.
 
 Note the options at the top: **Add service**, **Add support**, .., and **Share**.
 
