@@ -188,7 +188,7 @@ Snapshots are used for backups but your instance does not perform any backups.
 
 AWS bills users **monthly** and Free-Tier eligible services have **monthly** quotas or limits. You must not surpass these quotas in each month if you don't want to incur costs while your Free Tier is active. To find out how much in the current month you have used of your monthly Free-Tier allowance, login to your IAM account and go to the **Billing Dashboard** using the drop-down menu *user@accountalias* (or *user@accountnumber* if you did not create an alias) on the top right. Then, on the navigation pane on the left, under Billing, click on **Free Tier**. This will show the Free Tier usage summary table.
 
-![Caption.](../fig/05-free-tier-usage-excedeed01Table.png "Free Tier usage summary table.")
+![Caption.](../fig/05-free-tier-usage-excedeed01Table.png "Free Tier usage summary table."){: width="900px"}
 
 The table shows the usage in the current month of each Free-Tier eligible service in your account. There is a row for each service and the columns give: the type of **Service**, the **AWS Free Tier usage limit**, your **Current usage** for the month, the  **Forecasted usage** for the month, the  **MTD actual usage** for the month as a percentage of the service monthly Free-Tier limit, and the service **MTD Forecasted usage** for the month. **MTD** stands for Month-To-Date.
 
@@ -203,7 +203,7 @@ The fourth column corresponds to the AWS **Data Transfer** service which allows 
 ### **Notes on service usage**
 
 #### **Usage of EBS storage is measured in GB-Month**'s (GB-Mo in the table):
-![Caption.](../fig/05-free-tier-usage-excedeed02EBS-row.png "EBS storage Free Tier usage table row.")
+![Caption.](../fig/05-free-tier-usage-excedeed02EBS-row.png "EBS storage Free Tier usage table row."){: width="900px"}
 
 Under the free tier you have 30 GB-Months per month for 12 months. This means you can run one 30 GB instance for a month or one 60GB instance for half a month or two 30 GB instances for half a month. This is the case whether there are 28, 30 or 31 days per month so that the per day rate varies depending on the month.
 
@@ -245,7 +245,7 @@ Let's see a billing example assuming your 12-month Free Tier has expired.
 
 *service Current usage / service Free-Tier quota * 100*
 
-![Caption.](../fig/05-free-tier-usage-excedeed03EBSnEC2rows.png "Free-Tier usage table showing the rows for EBS, EC2 and KMS. The column give the Freer-tier limit, the current usage, for forecasted use for the month, the MTD usage and the forecasted MTD usage for the month")
+![Caption.](../fig/05-free-tier-usage-excedeed03EBSnEC2rows.png "Free-Tier usage table showing the rows for EBS, EC2 and KMS. The column give the Freer-tier limit, the current usage, for forecasted use for the month, the MTD usage and the forecasted MTD usage for the month"){: width="900px"}
 
 > ## Example MTD usage calculations:
 > *service Current usage / service Free-Tier quota * 100*
@@ -284,7 +284,7 @@ You will be billed on the 3rd of 4th of each month but can access your bill any 
 
 This will show a summary of the current month's bill. A drop-down menu, **Date** enables you access previous bills. 
 
-![Caption.](../fig/06-aws-bill-page01.png "AWS Bills - Example 1.")
+![Caption.](../fig/06-aws-bill-page01.png "AWS Bills - Example 1."){: width="900px"}
 
 In the figure below we have expanded the drop-down menu of the **Elastic Compute Cloud** (EC2) service. Service usage and cost is grouped by region. Our account shows only the Ireland region for EC2 as we are using EC2 in that region only (below is an example showing multiple regions).
 
@@ -294,7 +294,7 @@ Had our Free Tier expired, the costs shown in the table would be:
 - 93.542 hours *times* $0.0126 USD per hour of t2.micro instance = **$1.178** for the EC2 service so far in the month, and 
 - 13.549 GB-Months *times* $0.11 USD per GB-Month = **$1.49** for the EBS storage service so far in the month. 
 
-![Caption.](../fig/06-aws-bill-page02EC2-EBS.png "AWS Bills - Example 2.")
+![Caption.](../fig/06-aws-bill-page02EC2-EBS.png "AWS Bills - Example 2."){: width="900px"}
 
 The figure below shows a billing example for EC2 service usage involving two regions and two  (Free-Tier eligible) t2.micro instances and the Free Tier being active but exceeded. Recall that each account has Free-Tier 750 hours per month of t2.micro instance service. 
 
@@ -302,7 +302,7 @@ The **instance** in the Northen Virginia region (1 in red in the figure below) r
 
 The **instance** in the Oregon region (2) ran for 534 hours. Of these hours, 4 incurred no cost as the 4 Free-Tier hours still to be used were applied. Thus only 530 hours were actually billed for a cost of 530 hours *times* $0.0125 USD per hour of t2.micro instance = **$6.36**.
 
-![Caption.](../fig/07-aws-bill-exceeding-free-tier2.png "AWS Bills - Example 3.")
+![Caption.](../fig/07-aws-bill-exceeding-free-tier2.png "AWS Bills - Example 3."){: width="900px"}
 
 
  

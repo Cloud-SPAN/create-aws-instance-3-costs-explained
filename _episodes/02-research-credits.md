@@ -115,7 +115,7 @@ However, the following two fields require preparation:
 - *Save and Share URL from AWS Pricing Calculator*
 - *Project Description*
 
-![Caption.](../fig/aws-credit4research/02-accr-application-form-cost-url-project-description.png "The ACCR form with the 'Save and Share URL from AWS Pricing Calculator' and 'Project Description' highlighted") 
+![Caption.](../fig/aws-credit4research/02-accr-application-form-cost-url-project-description.png "The ACCR form with the 'Save and Share URL from AWS Pricing Calculator' and 'Project Description' highlighted"){: width="900px"} 
 
 The field *Save and Share URL from AWS Pricing Calculator* requires that you enter the URL of the cost estimate of your project. You need to prepare it with the [AWS Pricing Calculator](https://calculator.aws/#/) --- civered in the next topic "3. Getting the cost estimate of your project".
 
@@ -144,26 +144,26 @@ Once the AWS Pricing Calculator page appears, click on **Create estimate** and t
 
 Type **ec2** in the search box to display only the services whose name contain EC2. The service we are interested in is the first one: "Amazon EC2". In the "Amazon EC2" box, click **Configure**.
 
-![Caption.](../fig/aws-credit4research/03-accr-pricing-calculator-ec2.png "AWS Pricing Calculator showing the 'Select service' page with 'ec2' typed in the search box and the 'Amazon EC2' service listed first") 
+![Caption.](../fig/aws-credit4research/03-accr-pricing-calculator-ec2.png "AWS Pricing Calculator showing the 'Select service' page with 'ec2' typed in the search box and the 'Amazon EC2' service listed first"){: width="900px"} 
 
 The "Configure Amazon EC2" page will appear. Select the box "Advance estimate" and then scroll down until you see the heading "EC2 Instances". Continue below.
-![Caption.](../fig/aws-credit4research/04-accr-pricing-calculator-ec2-advEstimate.png "The 'Configure Amazon EC2' with 'Advanced estimate' selected.") 
+![Caption.](../fig/aws-credit4research/04-accr-pricing-calculator-ec2-advEstimate.png "The 'Configure Amazon EC2' with 'Advanced estimate' selected."){: width="900px"} 
 
 Type "t2.medium" in the "EC2 Instances (1)" search box. This will then list "t2.medium --- 4 GiB --- etc" in the table. Select this row.
 
-![Caption.](../fig/aws-credit4research/05-accr-pricing-calculator-ec2-t2.medium.png "The 'EC2 Instances (1)' search box showing 't2.medium' typed in and the 't2.medium --- 4 GiB --- etc' listed in the table.") 
+![Caption.](../fig/aws-credit4research/05-accr-pricing-calculator-ec2-t2.medium.png "The 'EC2 Instances (1)' search box showing 't2.medium' typed in and the 't2.medium --- 4 GiB --- etc' listed in the table."){: width="900px"} 
 
 Scroll down to "Pricing strategy" and select "On-Demand".
 
-![Caption.](../fig/aws-credit4research/06-accr-pricing-calculator-ec2-pricing-model.png "'Pricing Strategy' showing 'On-Demand' selected") 
+![Caption.](../fig/aws-credit4research/06-accr-pricing-calculator-ec2-pricing-model.png "'Pricing Strategy' showing 'On-Demand' selected"){: width="900px"} 
 
 Scroll down again to "Amazon Elastic Block Storage (EBS)", enter 120 in "Storage amount" and set "Snapshot Frequency" to "No snapshot storage".
 
-![Caption.](../fig/aws-credit4research/07-accr-pricing-calculator-ec2-120EBS.png "'Amazon Elastic Block Storage (EBS)' showing 120 in 'Storage amount' and 'Snapshot Frequency' set to 'No snapshot storage'.") 
+![Caption.](../fig/aws-credit4research/07-accr-pricing-calculator-ec2-120EBS.png "'Amazon Elastic Block Storage (EBS)' showing 120 in 'Storage amount' and 'Snapshot Frequency' set to 'No snapshot storage'."){: width="900px"} 
 
 Scroll to the end of page to see your "Amazon EC2 estimate". This is the *monthly* fee for each service and the total for both services in US dollars. Click on "Add to my estimate"
 
-![Caption.](../fig/aws-credit4research/08-accr-pricing-calculator-total-monthly-estimate.png "The Monthly cost estimate.") 
+![Caption.](../fig/aws-credit4research/08-accr-pricing-calculator-total-monthly-estimate.png "The Monthly cost estimate."){: width="900px"} 
 
 The page will now show your cost estimate for 12 months at the top, and the details of your instance configuration below: Ireland region, intance type t2.medium, 120 EBS storage, On-Demand Pricing strategy.
 
@@ -171,7 +171,7 @@ Note the options at the top: **Add service**, **Add support**, .., and **Share**
 
 In this example, we do not need to add any services but you could add more using **Add service**. You can create as many cost estimates as you want. They are deleted after three years. 
 
-![Caption.](../fig/aws-credit4research/09-accr-pricing-calculator-annual-estimate.png "The Annual cost estimate.") 
+![Caption.](../fig/aws-credit4research/09-accr-pricing-calculator-annual-estimate.png "The Annual cost estimate."){: width="900px"} 
 
 **Share** is what you need for your application. Click on **Share**
 
